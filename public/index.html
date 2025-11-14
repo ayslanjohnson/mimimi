@@ -33,6 +33,7 @@
     <section class="hero-modern">
         <div class="container">
             <div class="row align-items-center min-vh-100">
+                <!-- Coluna da Esquerda - Conteúdo Principal -->
                 <div class="col-lg-6" data-aos="fade-right">
                     <div class="hero-content-modern">
                         <h1 class="hero-title-modern">
@@ -41,69 +42,98 @@
                         <p class="hero-subtitle-modern">
                             Sistema avançado de análise de perfis PlayStation com IA
                         </p>
-                        
-                        <!-- Stats Grid Moderno -->
-                        <div class="stats-grid-modern">
-                            <div class="stat-card-modern">
-                                <div class="stat-icon-modern blue">
-                                    <i class="bi bi-trophy"></i>
-                                </div>
-                                <div class="stat-info-modern">
-                                    <h4>30 pts</h4>
-                                    <p>Platinas</p>
-                                </div>
+
+                        <!-- Feature List -->
+                        <div class="feature-list-modern mb-4">
+                            <div class="feature-item-modern">
+                                <i class="bi bi-check-circle-fill text-success"></i>
+                                <span>Análise completa do perfil PSN</span>
                             </div>
-                            <div class="stat-card-modern">
-                                <div class="stat-icon-modern cyan">
-                                    <i class="bi bi-percent"></i>
-                                </div>
-                                <div class="stat-info-modern">
-                                    <h4>20 pts</h4>
-                                    <p>Completude</p>
-                                </div>
+                            <div class="feature-item-modern">
+                                <i class="bi bi-check-circle-fill text-success"></i>
+                                <span>Pontuação detalhada (0-100 pontos)</span>
                             </div>
-                            <div class="stat-card-modern">
-                                <div class="stat-icon-modern purple">
-                                    <i class="bi bi-gem"></i>
-                                </div>
-                                <div class="stat-info-modern">
-                                    <h4>20 pts</h4>
-                                    <p>Raras</p>
-                                </div>
+                            <div class="feature-item-modern">
+                                <i class="bi bi-check-circle-fill text-success"></i>
+                                <span>Classificação "Mi mi mi" exclusiva</span>
                             </div>
-                            <div class="stat-card-modern">
-                                <div class="stat-icon-modern pink">
-                                    <i class="bi bi-award"></i>
-                                </div>
-                                <div class="stat-info-modern">
-                                    <h4>15 pts</h4>
-                                    <p>GOTY</p>
-                                </div>
+                            <div class="feature-item-modern">
+                                <i class="bi bi-check-circle-fill text-success"></i>
+                                <span>Gráficos interativos e dashboard</span>
                             </div>
                         </div>
 
-                        <!-- Feature List -->
-                        <div class="feature-list">
-                            <div class="feature-item">
-                                <i class="bi bi-check-circle-fill text-success"></i>
-                                <span class="text-light">Análise completa do perfil PSN</span>
+                        <!-- Painel do Sistema de Pontuação -->
+                        <div class="modern-card score-system-card">
+                            <div class="card-header-modern">
+                                <h4><i class="bi bi-graph-up me-2"></i>Sistema de Pontuação</h4>
+                                <p class="mb-0">Como sua pontuação é calculada</p>
                             </div>
-                            <div class="feature-item">
-                                <i class="bi bi-check-circle-fill text-success"></i>
-                                <span class="text-light">Pontuação detalhada (0-100 pontos)</span>
-                            </div>
-                            <div class="feature-item">
-                                <i class="bi bi-check-circle-fill text-success"></i>
-                                <span class="text-light">Classificação "Mi mi mi" exclusiva</span>
-                            </div>
-                            <div class="feature-item">
-                                <i class="bi bi-check-circle-fill text-success"></i>
-                                <span class="text-light">Gráficos interativos e dashboard</span>
+                            <div class="card-body">
+                                <div class="score-breakdown">
+                                    <div class="score-item">
+                                        <div class="score-icon">
+                                            <i class="bi bi-trophy"></i>
+                                        </div>
+                                        <div class="score-info">
+                                            <h5>Platinas</h5>
+                                            <p>Taxa de platinas conquistadas</p>
+                                            <div class="score-points">30 pontos</div>
+                                        </div>
+                                    </div>
+                                    <div class="score-item">
+                                        <div class="score-icon">
+                                            <i class="bi bi-percent"></i>
+                                        </div>
+                                        <div class="score-info">
+                                            <h5>Completude</h5>
+                                            <p>Porcentagem média de completude</p>
+                                            <div class="score-points">20 pontos</div>
+                                        </div>
+                                    </div>
+                                    <div class="score-item">
+                                        <div class="score-icon">
+                                            <i class="bi bi-gem"></i>
+                                        </div>
+                                        <div class="score-info">
+                                            <h5>Platinas Raras</h5>
+                                            <p>Platinas com raridade &lt; 20%</p>
+                                            <div class="score-points">20 pontos</div>
+                                        </div>
+                                    </div>
+                                    <div class="score-item">
+                                        <div class="score-icon">
+                                            <i class="bi bi-award"></i>
+                                        </div>
+                                        <div class="score-info">
+                                            <h5>Jogos GOTY</h5>
+                                            <p>Jogos que ganharam Game of The Year</p>
+                                            <div class="score-points">15 pontos</div>
+                                        </div>
+                                    </div>
+                                    <div class="score-item">
+                                        <div class="score-icon">
+                                            <i class="bi bi-lightning-charge"></i>
+                                        </div>
+                                        <div class="score-info">
+                                            <h5>Alta Dificuldade</h5>
+                                            <p>Jogos com dificuldade 7/10+</p>
+                                            <div class="score-points">15 pontos</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="total-score-info">
+                                    <div class="total-score">
+                                        <span>Pontuação Total:</span>
+                                        <strong>100 pontos</strong>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 
+                <!-- Coluna da Direita - Formulário -->
                 <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
                     <div class="analysis-card-modern">
                         <div class="card-header-modern">
@@ -112,7 +142,6 @@
                         </div>
                         
                         <form id="psnAnalysisForm" class="analysis-form">
-                            <!-- CAMPO DE PERFIL PSN ADICIONADO -->
                             <div class="form-group-modern">
                                 <label for="psnUsername" class="form-label-modern">
                                     <i class="bi bi-person-circle me-2"></i>Nome de usuário PSN
