@@ -5,115 +5,241 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PSN Analysis - Mi mi mi, PlayJEGUE</title>
     
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link href="css/styles.css" rel="stylesheet">
+    <!-- Fontes Gaming -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- CSS Gaming -->
+    <link href="css/gamer-theme.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <!-- Efeito de Partículas -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Header Gaming -->
+    <nav class="navbar navbar-expand-lg gaming-header">
         <div class="container">
-            <a class="navbar-brand" href="#">
-                <i class="fas fa-gamepad me-2"></i>
-                PSN Analysis
+            <a class="navbar-brand logo" href="#">
+                <i class="bi bi-controller me-2"></i>PSN ANALYSIS
             </a>
             <div class="navbar-nav ms-auto">
-                <a class="nav-link" href="#" id="languageToggle">
-                    <i class="fas fa-language me-1"></i>PT-BR/EN-US
+                <a class="nav-link text-neon-blue" href="#" id="languageToggle">
+                    <i class="bi bi-globe me-1"></i>PT-BR/EN-US
                 </a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero-section bg-gradient py-5">
+    <!-- Hero Section Gaming -->
+    <section class="hero-gaming">
         <div class="container">
-            <div class="row align-items-center min-vh-75">
-                <div class="col-lg-6">
-                    <h1 class="display-4 fw-bold mb-4">
-                        <i class="fas fa-chart-line text-primary me-3"></i>
-                        Mi mi mi, PlayJEGUE
-                    </h1>
-                    <p class="lead mb-4">Sistema avançado de análise de perfis PlayStation com IA</p>
-                    
-                    <div class="row g-3">
-                        <div class="col-md-3">
-                            <div class="text-center">
-                                <i class="fas fa-trophy fa-2x text-warning mb-2"></i>
-                                <h5 class="mb-1">Platinas</h5>
-                                <small class="text-muted">30 pontos</small>
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="hero-content">
+                        <h1 class="hero-title">
+                            <span class="typing-effect">Mi mi mi, PlayJEGUE</span>
+                        </h1>
+                        <p class="hero-subtitle">
+                            Sistema avançado de análise de perfis PlayStation com IA
+                        </p>
+                        
+                        <!-- Stats Grid -->
+                        <div class="stats-grid-hero">
+                            <div class="stat-card-hero">
+                                <div class="stat-icon-hero bg-neon-blue">
+                                    <i class="bi bi-trophy"></i>
+                                </div>
+                                <div class="stat-info-hero">
+                                    <h4>30 pts</h4>
+                                    <p>Platinas</p>
+                                </div>
+                            </div>
+                            <div class="stat-card-hero">
+                                <div class="stat-icon-hero bg-neon-green">
+                                    <i class="bi bi-percent"></i>
+                                </div>
+                                <div class="stat-info-hero">
+                                    <h4>20 pts</h4>
+                                    <p>Completude</p>
+                                </div>
+                            </div>
+                            <div class="stat-card-hero">
+                                <div class="stat-icon-hero bg-neon-purple">
+                                    <i class="bi bi-gem"></i>
+                                </div>
+                                <div class="stat-info-hero">
+                                    <h4>20 pts</h4>
+                                    <p>Raras</p>
+                                </div>
+                            </div>
+                            <div class="stat-card-hero">
+                                <div class="stat-icon-hero bg-neon-pink">
+                                    <i class="bi bi-award"></i>
+                                </div>
+                                <div class="stat-info-hero">
+                                    <h4>15 pts</h4>
+                                    <p>GOTY</p>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-md-3">
-                            <div class="text-center">
-                                <i class="fas fa-percentage fa-2x text-info mb-2"></i>
-                                <h5 class="mb-1">Completude</h5>
-                                <small class="text-muted">20 pontos</small>
+
+                        <!-- Feature List -->
+                        <div class="feature-list">
+                            <div class="feature-item">
+                                <i class="bi bi-check-circle-fill text-neon-green"></i>
+                                <span>Análise completa do perfil PSN</span>
                             </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="text-center">
-                                <i class="fas fa-gem fa-2x text-success mb-2"></i>
-                                <h5 class="mb-1">Raras</h5>
-                                <small class="text-muted">20 pontos</small>
+                            <div class="feature-item">
+                                <i class="bi bi-check-circle-fill text-neon-green"></i>
+                                <span>Pontuação detalhada (0-100 pontos)</span>
                             </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="text-center">
-                                <i class="fas fa-crown fa-2x text-danger mb-2"></i>
-                                <h5 class="mb-1">GOTY</h5>
-                                <small class="text-muted">15 pontos</small>
+                            <div class="feature-item">
+                                <i class="bi bi-check-circle-fill text-neon-green"></i>
+                                <span>Classificação "Mi mi mi" exclusiva</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="bi bi-check-circle-fill text-neon-green"></i>
+                                <span>Gráficos interativos e dashboard</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="col-lg-6">
-                    <div class="card shadow-lg">
-                        <div class="card-body p-4">
-                            <h3 class="card-title mb-4">
-                                <i class="fas fa-search me-2"></i>Analisar Perfil PSN
+                <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+                    <div class="analysis-card">
+                        <div class="card-header-gaming">
+                            <h3>
+                                <i class="bi bi-search-heart me-2"></i>Analisar Perfil PSN
                             </h3>
-                            
-                            <form id="psnAnalysisForm">
-                                <div class="mb-3">
-                                    <label for="psnUsername" class="form-label">Nome de usuário PSN</label>
-                                    <div class="input-group">
-                                        <span class="input-group-text">
-                                            <i class="fas fa-user"></i>
-                                        </span>
-                                        <input type="text" class="form-control" id="psnUsername" 
-                                               placeholder="Ex: gamer123" required>
-                                    </div>
-                                </div>
-                                
-                                <div class="mb-3">
-                                    <label class="form-label">Gênero</label>
-                                    <div>
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="gender" id="male" value="male" checked>
-                                            <label class="form-check-label" for="male">
-                                                <i class="fas fa-mars me-1"></i>Masculino
-                                            </label>
-                                        </div>
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="gender" id="female" value="female">
-                                            <label class="form-check-label" for="female">
-                                                <i class="fas fa-venus me-1"></i>Feminino
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <button type="submit" class="btn btn-primary btn-lg w-100" id="analyzeBtn">
-                                    <i class="fas fa-chart-bar me-2"></i>Analisar Perfil
-                                    <span class="spinner-border spinner-border-sm ms-2 d-none" id="loadingSpinner"></span>
-                                </button>
-                            </form>
+                            <div class="glow-effect"></div>
                         </div>
+                        
+                        <form id="psnAnalysisForm" class="analysis-form">
+                            <div class="form-group-gaming">
+                                <label for="psnUsername" class="form-label-gaming">
+                                    <i class="bi bi-person-circle me-2"></i>Nome de usuário PSN
+                                </label>
+                                <div class="input-group-gaming">
+                                    <input type="text" class="form-input-gaming" id="psnUsername" 
+                                           placeholder="Ex: gamer123" required>
+                                    <div class="input-glow"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group-gaming">
+                                <label class="form-label-gaming">
+                                    <i class="bi bi-gender-ambiguous me-2"></i>Gênero
+                                </label>
+                                <div class="gender-selection">
+                                    <div class="gender-option">
+                                        <input type="radio" name="gender" id="male" value="male" checked>
+                                        <label for="male" class="gender-label">
+                                            <i class="bi bi-gender-male"></i>
+                                            <span>Masculino</span>
+                                        </label>
+                                    </div>
+                                    <div class="gender-option">
+                                        <input type="radio" name="gender" id="female" value="female">
+                                        <label for="female" class="gender-label">
+                                            <i class="bi bi-gender-female"></i>
+                                            <span>Feminino</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="btn-gaming btn-analyze" id="analyzeBtn">
+                                <i class="bi bi-lightning-charge me-2"></i>Analisar Perfil
+                                <div class="btn-glow"></div>
+                                <span class="loading-spinner d-none" id="loadingSpinner"></span>
+                            </button>
+
+                            <div class="form-footer">
+                                <small class="text-neon-blue">
+                                    <i class="bi bi-shield-check me-1"></i>
+                                    Suas informações estão seguras conosco
+                                </small>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rating System Section -->
+    <section class="rating-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Sistema de Classificação</h2>
+                <p>Descubra em qual categoria você se encaixa</p>
+            </div>
+
+            <div class="rating-grid">
+                <div class="rating-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="rating-icon rating-miado">
+                        <i class="bi bi-emoji-dizzy"></i>
+                    </div>
+                    <div class="rating-content">
+                        <h3>🐱 Miado</h3>
+                        <div class="rating-score">0-40 pontos</div>
+                        <p>Iniciante nas conquistas, começando a jornada gaming!</p>
+                        <ul class="rating-features">
+                            <li>Até 40 pontos</li>
+                            <li>Poucas platinas</li>
+                            <li>Jornada inicial</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="rating-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="rating-icon rating-migue">
+                        <i class="bi bi-emoji-smile"></i>
+                    </div>
+                    <div class="rating-content">
+                        <h3>😺 Migué</h3>
+                        <div class="rating-score">41-75 pontos</div>
+                        <p>Jogador experiente, dominando os desafios!</p>
+                        <ul class="rating-features">
+                            <li>41-75 pontos</li>
+                            <li>Platinas consistentes</li>
+                            <li>Experiência sólida</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="rating-card" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="rating-icon rating-misere">
+                        <i class="bi bi-emoji-heart-eyes"></i>
+                    </div>
+                    <div class="rating-content">
+                        <h3>😻 Miserê</h3>
+                        <div class="rating-score">76-90 pontos</div>
+                        <p>Veterano dedicado, quase uma lenda do PlayStation!</p>
+                        <ul class="rating-features">
+                            <li>76-90 pontos</li>
+                            <li>Muitas platinas raras</li>
+                            <li>Veterano comprovado</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="rating-card" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="rating-icon rating-miseravao">
+                        <i class="bi bi-emoji-sunglasses"></i>
+                    </div>
+                    <div class="rating-content">
+                        <h3>🏆 Miseravão</h3>
+                        <div class="rating-score">91-100 pontos</div>
+                        <p>Lenda do PlayStation, mestre das conquistas!</p>
+                        <ul class="rating-features">
+                            <li>91-100 pontos</li>
+                            <li>Platinas lendárias</li>
+                            <li>Status de lenda</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -121,56 +247,89 @@
     </section>
 
     <!-- Features Section -->
-    <section class="py-5 bg-dark">
+    <section class="features-section">
         <div class="container">
-            <h2 class="text-center mb-5">Sistema de Classificação</h2>
-            <div class="row g-4">
-                <div class="col-md-3">
-                    <div class="card text-center h-100 border-warning">
-                        <div class="card-body">
-                            <i class="fas fa-cat fa-3x text-warning mb-3"></i>
-                            <h4 class="card-title">🐱 Miado</h4>
-                            <p class="card-text">0-40 pontos</p>
-                            <small class="text-muted">Iniciante nas conquistas</small>
-                        </div>
+            <div class="section-header" data-aos="fade-up">
+                <h2>Recursos Avançados</h2>
+                <p>Tudo que você precisa para analisar seu perfil PSN</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon">
+                        <i class="bi bi-graph-up-arrow"></i>
                     </div>
+                    <h4>Análise Detalhada</h4>
+                    <p>Pontuação completa baseada em 5 critérios diferentes para avaliação precisa</p>
                 </div>
-                <div class="col-md-3">
-                    <div class="card text-center h-100 border-info">
-                        <div class="card-body">
-                            <i class="fas fa-smile fa-3x text-info mb-3"></i>
-                            <h4 class="card-title">😺 Migué</h4>
-                            <p class="card-text">41-75 pontos</p>
-                            <small class="text-muted">Jogador experiente</small>
-                        </div>
+
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon">
+                        <i class="bi bi-trophy"></i>
                     </div>
+                    <h4>Platinas Raras</h4>
+                    <p>Detecção automática de platinas raras com bônus de pontuação</p>
                 </div>
-                <div class="col-md-3">
-                    <div class="card text-center h-100 border-success">
-                        <div class="card-body">
-                            <i class="fas fa-heart fa-3x text-success mb-3"></i>
-                            <h4 class="card-title">😻 Miserê</h4>
-                            <p class="card-text">76-90 pontos</p>
-                            <small class="text-muted">Veterano dedicado</small>
-                        </div>
+
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon">
+                        <i class="bi bi-award"></i>
                     </div>
+                    <h4>Jogos GOTY</h4>
+                    <p>Identificação de jogos que ganharam Game of The Year</p>
                 </div>
-                <div class="col-md-3">
-                    <div class="card text-center h-100 border-danger">
-                        <div class="card-body">
-                            <i class="fas fa-trophy fa-3x text-danger mb-3"></i>
-                            <h4 class="card-title">🏆 Miseravão</h4>
-                            <p class="card-text">91-100 pontos</p>
-                            <small class="text-muted">Lenda do PlayStation</small>
-                        </div>
+
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-icon">
+                        <i class="bi bi-bar-chart"></i>
                     </div>
+                    <h4>Dashboard Interativo</h4>
+                    <p>Gráficos e estatísticas visuais para análise completa</p>
+                </div>
+
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="feature-icon">
+                        <i class="bi bi-share"></i>
+                    </div>
+                    <h4>Compartilhamento</h4>
+                    <p>Compartilhe sua análise com a comunidade gaming</p>
+                </div>
+
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="feature-icon">
+                        <i class="bi bi-phone"></i>
+                    </div>
+                    <h4>Totalmente Responsivo</h4>
+                    <p>Funciona perfeitamente em todos os dispositivos</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Bootstrap & Custom JS -->
+    <!-- Footer -->
+    <footer class="gaming-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">PSN ANALYSIS</div>
+                    <p>Mi mi mi, PlayJEGUE - A revolução na análise de perfis PSN</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#" class="footer-link">Termos de Uso</a>
+                    <a href="#" class="footer-link">Privacidade</a>
+                    <a href="#" class="footer-link">Contato</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 PSN Analysis. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/particles.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
