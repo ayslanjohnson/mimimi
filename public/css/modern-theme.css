@@ -1,0 +1,609 @@
+:root {
+    --primary-blue: #2563eb;
+    --primary-purple: #7c3aed;
+    --primary-pink: #db2777;
+    --primary-cyan: #06b6d4;
+    --dark-bg: #0f172a;
+    --darker-bg: #020617;
+    --card-bg: #1e293b;
+    --accent-glow: 0 0 20px rgba(37, 99, 235, 0.3);
+    --text-primary: #f8fafc;
+    --text-secondary: #cbd5e1;
+    --text-muted: #64748b;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--dark-bg);
+    background-image: 
+        radial-gradient(circle at 15% 50%, rgba(37, 99, 235, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 85% 30%, rgba(124, 58, 237, 0.1) 0%, transparent 50%);
+    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+    color: var(--text-primary);
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+/* Fontes modernas */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Header Moderno */
+.modern-header {
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 1.8rem;
+    background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+}
+
+/* Cards Modernos */
+.modern-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    box-shadow: 
+        0 4px 24px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.modern-card:hover {
+    border-color: rgba(37, 99, 235, 0.3);
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(37, 99, 235, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Botões Modernos */
+.btn-modern {
+    background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple));
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 14px 32px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-modern::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.5s;
+}
+
+.btn-modern:hover::before {
+    left: 100%;
+}
+
+.btn-modern:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
+}
+
+/* Hero Section Moderna */
+.hero-modern {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background: linear-gradient(135deg, var(--dark-bg) 0%, var(--darker-bg) 100%);
+}
+
+.hero-content-modern {
+    padding: 4rem 0;
+}
+
+.hero-title-modern {
+    font-family: 'Inter', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--text-primary), var(--primary-cyan));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+}
+
+.hero-subtitle-modern {
+    font-size: 1.3rem;
+    color: var(--text-secondary);
+    margin-bottom: 3rem;
+    font-weight: 400;
+}
+
+/* Stats Grid Moderno */
+.stats-grid-modern {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.stat-card-modern {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.stat-card-modern:hover {
+    border-color: rgba(37, 99, 235, 0.3);
+    transform: translateY(-2px);
+}
+
+.stat-icon-modern {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+    font-size: 1.3rem;
+}
+
+.stat-icon-modern.blue { background: rgba(37, 99, 235, 0.1); color: var(--primary-blue); }
+.stat-icon-modern.cyan { background: rgba(6, 182, 212, 0.1); color: var(--primary-cyan); }
+.stat-icon-modern.purple { background: rgba(124, 58, 237, 0.1); color: var(--primary-purple); }
+.stat-icon-modern.pink { background: rgba(219, 39, 119, 0.1); color: var(--primary-pink); }
+
+.stat-info-modern h4 {
+    font-size: 1.4rem;
+    margin: 0;
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.stat-info-modern p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* Formulário Moderno */
+.analysis-card-modern {
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 2.5rem;
+    position: relative;
+    backdrop-filter: blur(10px);
+}
+
+.card-header-modern {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.card-header-modern h3 {
+    color: var(--text-primary);
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.card-header-modern p {
+    color: var(--text-muted);
+    margin: 0;
+}
+
+/* Campo de Input Moderno */
+.form-group-modern {
+    margin-bottom: 1.5rem;
+}
+
+.form-label-modern {
+    display: block;
+    color: var(--text-primary);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.input-group-modern {
+    position: relative;
+}
+
+.form-input-modern {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1.5px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 1rem 1.5rem;
+    color: var(--text-primary);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    font-family: 'Inter', sans-serif;
+}
+
+.form-input-modern:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.form-input-modern::placeholder {
+    color: var(--text-muted);
+}
+
+/* Gender Selection Moderno */
+.gender-selection-modern {
+    display: flex;
+    gap: 1rem;
+}
+
+.gender-option-modern {
+    flex: 1;
+}
+
+.gender-option-modern input {
+    display: none;
+}
+
+.gender-label-modern {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1.5px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    gap: 0.5rem;
+}
+
+.gender-label-modern i {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+}
+
+.gender-label-modern span {
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.gender-option-modern input:checked + .gender-label-modern {
+    border-color: var(--primary-blue);
+    background: rgba(37, 99, 235, 0.1);
+}
+
+.gender-option-modern input:checked + .gender-label-modern i,
+.gender-option-modern input:checked + .gender-label-modern span {
+    color: var(--primary-blue);
+}
+
+/* Seções Modernas */
+.section-modern {
+    padding: 5rem 0;
+}
+
+.section-header-modern {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-header-modern h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.section-header-modern p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Rating Cards Modernos */
+.rating-grid-modern {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.rating-card-modern {
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.rating-card-modern::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    border-radius: 4px 4px 0 0;
+}
+
+.rating-card-modern.miado::before { background: linear-gradient(135deg, #ef4444, #dc2626); }
+.rating-card-modern.migue::before { background: linear-gradient(135deg, #10b981, #059669); }
+.rating-card-modern.misere::before { background: linear-gradient(135deg, #3b82f6, #2563eb); }
+.rating-card-modern.miseravao::before { background: linear-gradient(135deg, #8b5cf6, #7c3aed); }
+
+.rating-card-modern:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.rating-icon-modern {
+    width: 64px;
+    height: 64px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 1.8rem;
+}
+
+.rating-card-modern.miado .rating-icon-modern { background: rgba(239, 68, 68, 0.1); color: #ef4444; }
+.rating-card-modern.migue .rating-icon-modern { background: rgba(16, 185, 129, 0.1); color: #10b981; }
+.rating-card-modern.misere .rating-icon-modern { background: rgba(59, 130, 246, 0.1); color: #3b82f6; }
+.rating-card-modern.miseravao .rating-icon-modern { background: rgba(139, 92, 246, 0.1); color: #8b5cf6; }
+
+.rating-content-modern h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.rating-score-modern {
+    font-size: 1.1rem;
+    color: var(--primary-cyan);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.rating-content-modern p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.rating-features-modern {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.rating-features-modern li {
+    color: var(--text-muted);
+    padding: 0.4rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.rating-features-modern li:last-child {
+    border-bottom: none;
+}
+
+/* Features Grid Moderno */
+.features-grid-modern {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.feature-card-modern {
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.feature-card-modern:hover {
+    border-color: var(--primary-blue);
+    transform: translateY(-3px);
+}
+
+.feature-icon-modern {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    background: rgba(37, 99, 235, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 1.5rem;
+    color: var(--primary-blue);
+}
+
+.feature-card-modern h4 {
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.feature-card-modern p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* Footer Moderno */
+.modern-footer {
+    background: var(--darker-bg);
+    padding: 3rem 0 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-content-modern {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.footer-brand-modern .logo {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.footer-brand-modern p {
+    color: var(--text-muted);
+    margin: 0;
+}
+
+.footer-links-modern {
+    display: flex;
+    gap: 2rem;
+}
+
+.footer-link-modern {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-link-modern:hover {
+    color: var(--primary-blue);
+}
+
+.footer-bottom-modern {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-bottom-modern p {
+    color: var(--text-muted);
+    margin: 0;
+}
+
+/* Loading Moderno */
+.loading-modern {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid transparent;
+    border-top: 2px solid currentColor;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-left: 10px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Alertas Modernos */
+.alert-modern {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid;
+    border-radius: 10px;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1rem;
+    backdrop-filter: blur(10px);
+}
+
+.alert-warning {
+    border-color: rgba(245, 158, 11, 0.3);
+    background: rgba(245, 158, 11, 0.1);
+    color: #fbbf24;
+}
+
+.alert-danger {
+    border-color: rgba(239, 68, 68, 0.3);
+    background: rgba(239, 68, 68, 0.1);
+    color: #f87171;
+}
+
+.alert-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.alert-close {
+    background: none;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-title-modern {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle-modern {
+        font-size: 1.1rem;
+    }
+    
+    .stats-grid-modern {
+        grid-template-columns: 1fr;
+    }
+    
+    .analysis-card-modern {
+        padding: 2rem;
+    }
+    
+    .gender-selection-modern {
+        flex-direction: column;
+    }
+    
+    .rating-grid-modern {
+        grid-template-columns: 1fr;
+    }
+    
+    .features-grid-modern {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content-modern {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+    
+    .footer-links-modern {
+        justify-content: center;
+    }
+}

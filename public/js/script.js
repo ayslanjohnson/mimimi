@@ -7,40 +7,11 @@ class PSNAnalysis {
     init() {
         this.bindEvents();
         this.loadLanguage();
-        this.initParticles();
         AOS.init({
             duration: 800,
             easing: 'ease-in-out',
             once: true
         });
-    }
-
-    initParticles() {
-        const particlesContainer = document.getElementById('particles');
-        const particleCount = 30;
-
-        for (let i = 0; i < particleCount; i++) {
-            const particle = document.createElement('div');
-            particle.className = 'particle';
-            
-            const size = Math.random() * 4 + 1;
-            const left = Math.random() * 100;
-            const animationDuration = Math.random() * 25 + 15;
-            const animationDelay = Math.random() * 5;
-            
-            particle.style.width = `${size}px`;
-            particle.style.height = `${size}px`;
-            particle.style.left = `${left}%`;
-            particle.style.animationDuration = `${animationDuration}s`;
-            particle.style.animationDelay = `${animationDelay}s`;
-            
-            const colors = ['#00f3ff', '#b967ff', '#ff2a6d', '#05d9e8'];
-            const color = colors[Math.floor(Math.random() * colors.length)];
-            particle.style.background = color;
-            particle.style.boxShadow = `0 0 15px ${color}`;
-            
-            particlesContainer.appendChild(particle);
-        }
     }
 
     bindEvents() {
@@ -68,7 +39,6 @@ class PSNAnalysis {
         this.showLoading(true);
         
         try {
-            // Chamar a API real
             const response = await fetch('/api/analyze', {
                 method: 'POST',
                 headers: {
@@ -120,14 +90,13 @@ class PSNAnalysis {
         } else {
             button.disabled = false;
             spinner.classList.add('d-none');
-            button.innerHTML = '<i class="bi bi-lightning-charge me-2"></i>Analisar Perfil';
+            button.innerHTML = '<i class="bi bi-graph-up me-2"></i>Analisar Perfil';
         }
     }
 
     showAlert(message, type) {
-        // Criar alerta estilizado
         const alertDiv = document.createElement('div');
-        alertDiv.className = `alert-gaming alert-${type}`;
+        alertDiv.className = `alert-modern alert-${type}`;
         alertDiv.innerHTML = `
             <div class="alert-content">
                 <i class="bi bi-exclamation-triangle-fill me-2"></i>
@@ -164,7 +133,6 @@ class PSNAnalysis {
     }
 
     loadLanguage() {
-        // Sistema de internacionalização básico
         const elements = document.querySelectorAll('[data-i18n]');
         elements.forEach(element => {
             const key = element.getAttribute('data-i18n');
@@ -211,46 +179,6 @@ class PSNAnalysis {
         };
     }
 }
-
-// CSS para alertas gaming
-const style = document.createElement('style');
-style.textContent = `
-    .alert-gaming {
-        background: rgba(255, 255, 255, 0.1);
-        border: 1px solid;
-        border-radius: 10px;
-        padding: 1rem;
-        margin-bottom: 1rem;
-        backdrop-filter: blur(10px);
-    }
-    
-    .alert-warning {
-        border-color: #ffd700;
-        background: rgba(255, 215, 0, 0.1);
-    }
-    
-    .alert-danger {
-        border-color: #ff2a6d;
-        background: rgba(255, 42, 109, 0.1);
-    }
-    
-    .alert-content {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        color: white;
-    }
-    
-    .alert-close {
-        background: none;
-        border: none;
-        color: white;
-        cursor: pointer;
-        padding: 0;
-        margin-left: 1rem;
-    }
-`;
-document.head.appendChild(style);
 
 // Inicializar a aplicação
 document.addEventListener('DOMContentLoaded', () => {
