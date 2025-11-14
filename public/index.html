@@ -1,16 +1,117 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>PSN Analyzer</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Mi mi mi, PlayJEGUE - Análise avançada de perfil PlayStation</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Inter:700,400&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div id="app">
-        <h1>PSN Analyzer</h1>
-        <div id="profiles"></div>
+  <div class="background-glow"></div>
+  <main>
+    <header class="main-header">
+      <h1>Mi mi mi, <span>PlayJEGUE</span></h1>
+      <p class="subtitle">
+        Análise avançada de perfil PlayStation<br>
+        <span>
+          Descubra seu verdadeiro nível: 
+          <span class="miado">Miado</span>, 
+          <span class="migue">Migué</span>, 
+          <span class="misere">Miserê</span> ou 
+          <span class="miseravao">Miseravão</span>
+        </span>
+      </p>
+    </header>
+    <section class="search-box">
+      <form id="searchForm" autocomplete="off">
+        <input type="text" id="psnId" placeholder="Digite seu PSN ID" maxlength="32" required>
+        <button type="submit">
+          <span class="icon">&#128269;</span> Analisar Perfil
+        </button>
+      </form>
+      <p class="hint">Digite apenas seu ID, sem espaços ou caracteres especiais</p>
+    </section>
+    <div class="main-panels">
+      <section class="panel scoring">
+        <h2><span class="icon">&#127919;</span> Sistema de Pontuação</h2>
+        <div class="score-content">
+          <div class="score-total"><span class="score-range">0-100</span> <span class="score-desc">Pontos Totais</span></div>
+          <ul>
+            <li><span class="icon">&#127942;</span> Platinas <span class="detail">30 pontos</span></li>
+            <li><span class="icon">&#9989;</span> Completude <span class="detail">20 pontos</span></li>
+            <li><span class="icon">&#128142;</span> Platinas Raras <span class="detail">20 pontos</span></li>
+            <li><span class="icon">&#127918;</span> Jogos GOTY <span class="detail">15 pontos</span></li>
+            <li><span class="icon">&#9889;</span> Alta Dificuldade <span class="detail">15 pontos</span></li>
+          </ul>
+        </div>
+      </section>
+      <section class="panel ranking">
+        <h2><span class="icon">&#128100;</span> Classificação</h2>
+        <div class="levels">
+          <div class="level-card miado">
+            <span class="icon">🐱</span>
+            <span class="label">Miado</span>
+            <span class="desc">Iniciante no caminho</span>
+            <span class="points">0-40</span>
+          </div>
+          <div class="level-card migue">
+            <span class="icon">🐱‍👤</span>
+            <span class="label">Migué</span>
+            <span class="desc">Jogador sólido</span>
+            <span class="points">41-75</span>
+          </div>
+          <div class="level-card misere">
+            <span class="icon">🐱‍🏍</span>
+            <span class="label">Miserê</span>
+            <span class="desc">Elite dos jogadores</span>
+            <span class="points">76-90</span>
+          </div>
+          <div class="level-card miseravao">
+            <span class="icon">👑</span>
+            <span class="label">Miseravão</span>
+            <span class="desc">Lendário absoluto</span>
+            <span class="points">91-100</span>
+          </div>
+        </div>
+      </section>
     </div>
-    <script src="script.js"></script>
+    <section class="features">
+      <div class="feature-card">
+        <div class="feature-icon game">&#127918;</div>
+        <div>
+          <h3>Análise Automática</h3>
+          <p>Sistema inteligente avalia seu perfil baseado em troféus, dificuldade, e qualidade dos jogos</p>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon trophy">&#127942;</div>
+        <div>
+          <h3>Classificação Mi mi mi</h3>
+          <p>Sistema único de 4 níveis baseado em métricas avançadas e objetivas</p>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon chart">&#128200;</div>
+        <div>
+          <h3>Estatísticas Detalhadas</h3>
+          <p>Análise por gênero, tempo de platina, jogos GOTY, Metacritic e muito mais</p>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="footer-left">
+        &lt;/&gt; Versão 1.0.0
+      </div>
+      <div class="footer-center">
+        Desenvolvido com <span style="color:#ff5252">♥</span> por 
+        <b style="color:#4285f4">Johnson – PlayJEGUE</b>
+      </div>
+      <div class="footer-right">
+        © 2025 Mi mi mi, PlayJEGUE. Todos os direitos reservados.
+      </div>
+    </footer>
+  </main>
+  <script src="script.js"></script>
 </body>
 </html>
