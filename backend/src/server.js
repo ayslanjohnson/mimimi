@@ -11,31 +11,31 @@ import logger from './infrastructure/logger/logger.js';
 import routes from './routes/index.js';
 
 const app = express();
-const PORT = process.env.PORT || 3000;
 
 // Middlewares de segurança
 app.use(helmet());
 app.use(compression());
 
-// CORS
+// CORS configurado para Vercel
 app.use(cors({
-  origin: process.env.CORS_ORIGIN || 'http://localhost:8080',
+  origin: [
+    'http://localhost:8080',
+    'https://mimimi-gamer.vercel.app/', // Substitua pelo seu domínio do frontend
+    process.env.CORS_ORIGIN // Variável de ambiente no Vercel
+  ].filter(Boolean),
   credentials: true
 }));
 
 // Rate limiting
 const limiter = rateLimit({
-  windowMs: parseInt(process.env.RATE_LIMIT_WINDOW_MS) || 15 * 60 * 1000,
-  max: parseInt(process.env.RATE_LIMIT_MAX_REQUESTS) || 100,
-  message: {
-    success: false,
-    error: 'Muitas requisições, tente novamente mais tarde.'
-  }
+  windowMs: 15 * 60 * 1000, // 15 minutos
+  max: 100 // limite de 100 requests por windowMs
 });
 app.use(limiter);
 
+// Logging
 app.use(pinoHttp({ 
-  logger, // Agora é uma instância direta do Pino
+  logger,
   autoLogging: true 
 }));
 
@@ -46,23 +46,13 @@ app.use(express.urlencoded({ extended: true }));
 // Rotas
 app.use('/api', routes);
 
-// Middleware de logging personalizado para todas as requests
-app.use((req, res, next) => {
-  const start = Date.now();
-  
-  res.on('finish', () => {
-    const duration = Date.now() - start;
-    logger.http(`${req.method} ${req.originalUrl} - ${res.statusCode}`, {
-      method: req.method,
-      url: req.originalUrl,
-      status: res.statusCode,
-      duration: `${duration}ms`,
-      userAgent: req.get('User-Agent'),
-      ip: req.ip
-    });
+// Health check para Vercel
+app.get('/health', (req, res) => {
+  res.status(200).json({ 
+    status: 'healthy', 
+    timestamp: new Date().toISOString(),
+    environment: process.env.NODE_ENV 
   });
-  
-  next();
 });
 
 // Error handler global
@@ -77,11 +67,13 @@ app.use((error, req, res, next) => {
   });
 });
 
-// Inicialização do servidor
-app.listen(PORT, () => {
-  logger.info(`🚀 Servidor rodando na porta ${PORT}`);
-  logger.info(`📊 Ambiente: ${process.env.NODE_ENV}`);
-  logger.info(`🌐 CORS Origin: ${process.env.CORS_ORIGIN || 'http://localhost:8080'}`);
-});
-
+// Export para Vercel serverless
 export default app;
+
+// Para desenvolvimento local
+if (process.env.NODE_ENV !== 'production') {
+  const PORT = process.env.PORT || 3000;
+  app.listen(PORT, () => {
+    logger.info(`🚀 Servidor rodando na porta ${PORT}`);
+  });
+}
