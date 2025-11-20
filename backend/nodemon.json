@@ -1,0 +1,12 @@
+{
+  "watch": ["src"],
+  "ext": "js,json",
+  "ignore": ["node_modules", "coverage", "dist"],
+  "exec": "node -r dotenv/config",
+  "env": {
+    "NODE_ENV": "development"
+  },
+  "events": {
+    "restart": "echo '🔄 Server reiniciado devido a mudanças nos arquivos'"
+  }
+}
