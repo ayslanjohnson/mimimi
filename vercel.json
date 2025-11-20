@@ -12,7 +12,7 @@
       "dest": "/backend/src/app.js",
       "methods": ["GET", "POST"],
       "headers": {
-        "Access-Control-Allow-Origin": "https://your-frontend.vercel.app",
+        "Access-Control-Allow-Origin": "https://mimimi-gamer.vercel.app/",
         "Access-Control-Allow-Methods": "GET, POST",
         "Access-Control-Allow-Headers": "X-CSRF-Token, Content-Type"
       }
