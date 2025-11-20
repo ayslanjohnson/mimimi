@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi mi mi, PlayJEGUE - Análise de Perfil PlayStation</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="cyber-background">
+        <div class="grid-overlay"></div>
+        <div class="particles"></div>
+    </div>
+
+    <div class="container">
+        <header class="cyber-header">
+            <div class="header-glitch">
+                <h1 class="cyber-title">Mi mi mi, <span class="cyber-accent">PlayJEGUE</span></h1>
+                <div class="glitch-layers">
+                    <div class="glitch-layer"></div>
+                    <div class="glitch-layer"></div>
+                </div>
+            </div>
+            <p class="cyber-subtitle">ANÁLISE AVANÇADA DE PERFIL PLAYSTATION COM IA</p>
+            <p class="cyber-tagline">DESCUBRA SEU VERDADEIRO NÍVEL: <span class="gradient-text">MIADO • MIGUÉ • MISERÊ • MISERAVÃO</span></p>
+            
+            <div class="cyber-language-selector">
+                <button id="pt-BR" class="cyber-btn active">PT-BR</button>
+                <button id="en-US" class="cyber-btn">EN-US</button>
+            </div>
+        </header>
+
+        <section class="cyber-input-section">
+            <div class="input-hologram">
+                <div class="hologram-effect"></div>
+                <div class="input-container">
+                    <label for="psnId" class="cyber-label">DIGITE SEU PSN ID</label>
+                    <div class="cyber-input-wrapper">
+                        <input type="text" id="psnId" class="cyber-input" placeholder="EX: WESLEY_SANTOOOS" maxlength="16">
+                        <div class="input-glow"></div>
+                    </div>
+                    <button id="analyzeBtn" class="cyber-primary-btn">
+                        <span class="btn-text">ANALISAR PERFIL</span>
+                        <div class="btn-shine"></div>
+                    </button>
+                </div>
+            </div>
+            <p class="cyber-note">DIGITE APENAS SEU ID, SEM ESPAÇOS OU CARACTERES ESPECIAIS</p>
+        </section>
+
+        <section id="results" class="cyber-results-section hidden">
+            <!-- Resultados serão inseridos dinamicamente aqui -->
+        </section>
+
+        <section class="cyber-scoring-system">
+            <h2 class="cyber-section-title">📊 SISTEMA DE PONTUAÇÃO (0-100 PONTOS)</h2>
+            
+            <div class="scoring-grid">
+                <div class="cyber-card scoring-card">
+                    <div class="card-glow"></div>
+                    <h3>🏆 PLATINAS</h3>
+                    <div class="cyber-points">30 PONTOS</div>
+                    <p>Taxa de platinas = (platinas conquistadas ÷ total de jogos) × 100</p>
+                    <div class="cyber-example">
+                        <strong>EXEMPLO:</strong> 124 platinas ÷ 54 jogos = 2.3 = 100%+ = 30 pontos ✅
+                    </div>
+                </div>
+                
+                <div class="cyber-card scoring-card">
+                    <div class="card-glow"></div>
+                    <h3>📈 COMPLETUDE</h3>
+                    <div class="cyber-points">20 PONTOS</div>
+                    <p>% de completude média do perfil × 0.2</p>
+                    <div class="cyber-example">
+                        <strong>EXEMPLO:</strong> 54 jogos 100% = 100% de completude = 20 pontos ✅
+                    </div>
+                </div>
+                
+                <div class="cyber-card scoring-card">
+                    <div class="card-glow"></div>
+                    <h3>💎 PLATINAS RARAS</h3>
+                    <div class="cyber-points">20 PONTOS</div>
+                    <p>Platinas com raridade &lt; 20% no PSN</p>
+                    <div class="cyber-example">
+                        <strong>EXEMPLO:</strong> Cada platina rara = 2 pontos (máx 20)
+                    </div>
+                </div>
+                
+                <div class="cyber-card scoring-card">
+                    <div class="card-glow"></div>
+                    <h3>🎮 JOGOS GOTY</h3>
+                    <div class="cyber-points">15 PONTOS</div>
+                    <p>Jogos que ganharam Game of The Year</p>
+                    <div class="cyber-example">
+                        <strong>EXEMPLO:</strong> Cada GOTY = 3 pontos (máx 15)
+                    </div>
+                </div>
+                
+                <div class="cyber-card scoring-card">
+                    <div class="card-glow"></div>
+                    <h3>⚡ ALTA DIFICULDADE</h3>
+                    <div class="cyber-points">15 PONTOS</div>
+                    <p>Jogos com dificuldade 7/10+</p>
+                    <div class="cyber-example">
+                        <strong>EXEMPLO:</strong> Cada jogo difícil = 2 pontos (máx 15)
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="cyber-footer">
+            <div class="footer-content">
+                <p>PSN ANALYSIS PRO • SISTEMA PROFISSIONAL DE ANÁLISE DE PERFIS PLAYSTATION</p>
+                <div class="footer-links">
+                    <span>API: <span id="apiStatus" class="status-online">ONLINE</span></span>
+                    <span>v1.0.0</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

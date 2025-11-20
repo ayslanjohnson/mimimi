@@ -1,16 +1,15 @@
-# mimimi
+# PSN Analysis Pro 🎮
 
-Sistema de Pontuação (0-100):
+Sistema profissional de análise de perfis PlayStation Network.
 
-Platinas: 30 pontos
-Completude: 20 pontos
-Platinas raras: 20 pontos
-Jogos GOTY: 15 pontos
-Alta dificuldade: 15 pontos
+## 🚀 Como Usar
 
-Classificação:
+### Desenvolvimento Local
+```bash
+# Backend
+cd backend
+npm install
+npm run dev
 
-0-40: 🐱 Miado
-41-75: 😺 Migué
-76-90: 😻 Miserê
-91-100: 👑 Miseravão
+# Frontend
+# Abra frontend/index.html no navegador

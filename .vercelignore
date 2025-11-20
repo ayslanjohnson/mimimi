@@ -1,0 +1,13 @@
+.git
+.gitignore
+README.md
+docker-compose.yml
+start.sh
+stop.sh
+logs.sh
+deploy.sh
+Dockerfile
+.dockerignore
+node_modules
+*.log
+.env
